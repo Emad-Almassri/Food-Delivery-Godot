@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://umlcr8rpigke"]
+
+[ext_resource type="Script" uid="uid://c15dt42lfq5tl" path="res://food_menu.gd" id="1_lti8b"]
+
+[node name="Node2D" type="CanvasLayer"]
+
+[node name="FoodMenu" type="OptionButton" parent="."]
+texture_filter = 1
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 1155.0
+offset_bottom = 646.0
+script = ExtResource("1_lti8b")

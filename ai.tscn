@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7s3fpts6cqoa"]
+
+[ext_resource type="Script" uid="uid://xtgelo3tfqdk" path="res://ai.gd" id="1_c35dq"]
+
+[sub_resource type="NobodyWhoSampler" id="NobodyWhoSampler_3i38e"]
+
+[node name="AI" type="Control" node_paths=PackedStringArray("aiText")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 29.0
+offset_right = 150.0
+offset_bottom = 69.0
+scale = Vector2(4.05877, 2.96404)
+script = ExtResource("1_c35dq")
+aiText = NodePath("PanelContainer/VBoxContainer/RichTextLabel")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 1.6282
+offset_right = 94.6282
+offset_bottom = 40.0
+scale = Vector2(2.64, 1.72)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="NobodyWhoChat" type="NobodyWhoChat" parent="." node_paths=PackedStringArray("model_node")]
+model_node = NodePath("../NobodyWhoModel")
+sampler = SubResource("NobodyWhoSampler_3i38e")
+
+[node name="NobodyWhoModel" type="NobodyWhoModel" parent="."]
+model_path = "user-bge-m3-q8_0.gguf"
